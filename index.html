@@ -13,8 +13,8 @@
 
 <body>
 
-    <header class="d-flex rounded ml-5 mr-5 mt-3">
-        <div class="jumbotron">
+    <header class="d-flex rounded mx-5 mt-3 mb-1">
+        <div class="jumbotron mb-3">
             <h1 class="display-4">Welcome to Hogwarts!</h1>
             <p class="lead">oad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. Fat Lady
                 baubles banana fritters fairy lights Petrificus Totalus. So thirsty, deluminator firs’ years follow me
@@ -27,25 +27,23 @@
                 cannot sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.
             </p>
             <p class="lead">
-                <a id="formCall" class="btn btn-primary btn-lg" href="#" role="button">Let's start sorting</a>
+                <a id="formCall" class="btn btn-primary btn-lg" href="#" role="button">Let's start sorting!</a>
             </p>
         </div>
     </header>
 
     <main>
-        <div class=" border border-dark rounded mr-5 ml-5">
+        <div class=" border border-dark rounded mx-5">
 
             <div class="">
-                <h2 class="ml-5">Enter First Year's Name</h2>
+                <h2 class="ml-5 mt-2">Enter First Year's Name</h2>
             </div>
 
-            <div class="">
-                <form class=" ml-5 d-flex justify-content-around form-inline">
-                    <label class="mb-2 mr-sm-2" for="inlineFormInputName2">Student: </label>
-                    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
-                        placeholder="Harry Potter">
-
-                    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            <div class="studentNameForm">
+                <form class="d-flex flex-row justify-content-end align-items-center my-3">
+                    <label class="m-1 mr-3" for="studentName">Student: </label>
+                    <input type="text" class="mx-5 border border-dark" id="studentName" placeholder=" Harry Potter">
+                    <button type="submit" class="btn btn-outline-dark btn-sm mx-5 px-5 py-0 font-weight-bold rounded"><h5>Sort!</h5></button>
                 </form>
 
             </div>
