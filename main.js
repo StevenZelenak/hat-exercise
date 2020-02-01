@@ -16,30 +16,49 @@ const callForm = (e) => {
         domString +=        `<h2 class="ml-5 mt-2">Enter First Year's Name</h2>`;
         domString +=    '</div>';
         domString += '<div class="studentNameForm">';
-        domString +=    '<form class="d-flex flex-row justify-content-end align-items-center my-3">';
+        domString +=    '<form  class="d-flex flex-row justify-content-end align-items-center my-3">';
         domString +=        '<label class="m-1 mr-3" for="studentName">Student: </label>';
         domString +=        '<input type="text" class="mx-5 border border-dark" id="studentName" placeholder=" Harry Potter">';
-        domString +=        '<button type="submit" class="btn btn-outline-dark btn-sm mx-5 px-5 py-0 font-weight-bold rounded"><h5>Sort!</h5></button>';
+        domString +=        '<button type="submit" id="btnSubmit" class="btn btn-outline-dark btn-sm mx-5 px-5 py-0 font-weight-bold rounded"><h5>Sort!</h5></button>';
         domString +=    '</form>';
         domString += '</div>';
         domString += '</div>';
 
         
     }
-
     outputDomString("formContainer", domString);
-
-
+    document.getElementById('btnSubmit').addEventListener('click', grabAndGo);
 }
+
+const grabAndGo = () =>{
+    getValue();
+    clearForm();
+    
+}
+
+const getValue = () =>{
+    let objvalue = document.getElementById('studentName').value;
+    console.log(objvalue);
+}
+
+const clearForm = () =>{
+    document.getElementById('studentName').value = '';
+ }
+
 
 const events = () => {
 
     document.getElementById('formCallButton').addEventListener('click', callForm);
+    
+   
+    
+   
 }
 
 const init = () => {
     
     events();
+    
     
 }
 
