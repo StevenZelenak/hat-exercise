@@ -1,3 +1,5 @@
+const houseNames = ['Gryffindor', 'Hufflepuff', 'Ravenclaw','Slytherin'];
+
 const outputDomString = (divId, str) => {
 
     const assignedDiv = document.getElementById(divId);
