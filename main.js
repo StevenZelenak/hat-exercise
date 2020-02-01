@@ -1,67 +1,74 @@
-const houseNames = ['Gryffindor', 'Hufflepuff', 'Ravenclaw','Slytherin'];
+//array of house names
+const houseNames = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
 
+const arrStudents = [];
+
+const randomize = (arr) =>{
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+//prints form to dom
 const outputDomString = (divId, str) => {
 
     const assignedDiv = document.getElementById(divId);
     assignedDiv.innerHTML = str;
 }
 
-const callForm = (e) => {
-
-    const idButton = e.target.id;
-    let domString = '';
-
-    if (idButton === 'formCallButton') {
-
-        domString += '<div class=" border border-dark rounded mx-5">';
-        domString +=    '<div class="">';
-        domString +=        `<h2 class="ml-5 mt-2">Enter First Year's Name</h2>`;
-        domString +=    '</div>';
-        domString += '<div class="studentNameForm">';
-        domString +=    '<form  class="d-flex flex-row justify-content-end align-items-center my-3">';
-        domString +=        '<label class="m-1 mr-3" for="studentName">Student: </label>';
-        domString +=        '<input type="text" class="mx-5 border border-dark" id="studentName" placeholder=" Harry Potter">';
-        domString +=        '<button type="submit" id="btnSubmit" class="btn btn-outline-dark btn-sm mx-5 px-5 py-0 font-weight-bold rounded"><h5>Sort!</h5></button>';
-        domString +=    '</form>';
-        domString += '</div>';
-        domString += '</div>';
-
-        
+//the form that gets called to the dom
+const callForm = () => {
+    if (document.getElementById('formContainer').className === "invisible") {
+        document.getElementById('formContainer').className = 'visible';
+    } else if (document.getElementById('formContainer').className === "visible") {
+        document.getElementById('formContainer').className = 'invisible';
     }
-    outputDomString("formContainer", domString);
-    document.getElementById('btnSubmit').addEventListener('click', grabAndGo);
 }
 
-const grabAndGo = () =>{
+const printCard = () => {
+
     getValue();
+    let domString = '';
+    for (let index = 0; index < arrStudents.length; index++) {
+        domString += '<div class="col-4 my-3">';
+        domString += '<div class="card-body border border-dark rounded text-center mx-2">';
+        domString += `<h3 class="card-title">${arrStudents[index].name}</h3>`;
+        domString += `<p class="card-text">${arrStudents[index].house}</p>`;
+        domString += '<button class="btn btn-outline-dark btn-sm mx-5 px-5 py-2 font-weight-bold rounded">Expel!</button>';
+        domString += '</div>';
+        domString += '</div>';
+    }
+    outputDomString("cardCall", domString);
     clearForm();
-    
 }
 
-const getValue = () =>{
+//grabs the info from the from and puts it somewhere then clears the value of the form
+
+
+//grabs value from the form
+const getValue = () => {
     let objvalue = document.getElementById('studentName').value;
-    console.log(objvalue);
+    arrStudents.push({name: objvalue, house:randomize(houseNames)});
+    return arrStudents;
 }
 
-const clearForm = () =>{
+//clears the value of the form
+const clearForm = () => {
     document.getElementById('studentName').value = '';
- }
+}
 
-
+//where the events are stored
 const events = () => {
 
+    document.getElementById('btnSubmit').addEventListener('click', printCard);
     document.getElementById('formCallButton').addEventListener('click', callForm);
-    
-   
-    
-   
 }
 
+//contains function that need to be initialized
 const init = () => {
-    
+
     events();
-    
-    
+
+
 }
 
+//runs the program
 init();
