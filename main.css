@@ -1,8 +1,10 @@
-body {
 
-}
 
 .studentNameForm button {
+    background-color:  #e9ecef;
+}
+
+.expelBtn button {
     background-color:  #e9ecef;
 }
 
