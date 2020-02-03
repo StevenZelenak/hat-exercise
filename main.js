@@ -36,15 +36,23 @@ const studentCounter = () => {
 //grabs value from the form and puts it onto the card
 const createStudent = () => {
     let objvalue = document.getElementById('studentName').value;
-    arrStudents.push({
-        id: studentCounter(),
-        name: objvalue,
-        house: randomize(houseNames)
-    });
+
+    if(objvalue === "")
+    {
+
+    }
+    else{
+        arrStudents.push({
+            id: studentCounter(),
+            name: objvalue,
+            house: randomize(houseNames)
+        });
+        printCard(arrStudents);
+        console.log(arrStudents);
+    }
     
     
-    printCard(arrStudents);
-    console.log(arrStudents);
+    
 }
 
 //prints card to the dom
