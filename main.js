@@ -37,11 +37,9 @@ const studentCounter = () => {
 const createStudent = () => {
     let objvalue = document.getElementById('studentName').value;
 
-    if(objvalue === "")
-    {
+    if (objvalue === "") {
 
-    }
-    else{
+    } else {
         arrStudents.push({
             id: studentCounter(),
             name: objvalue,
@@ -50,16 +48,16 @@ const createStudent = () => {
         printCard(arrStudents);
         console.log(arrStudents);
     }
-    
-    
-    
+
+
+
 }
 
 //prints card to the dom
 const printCard = (arr) => {
 
-    
-    
+
+
     let domString = '';
     for (let index = 0; index < arr.length; index++) {
         domString += '<div class="col-sm-12 col-md-6 col-lg-4 my-3">';
@@ -74,7 +72,7 @@ const printCard = (arr) => {
     outputDomString("cardCall", domString);
     clearForm();
     eventButtonLoop();
-    
+
 }
 
 //clears the value of the form
