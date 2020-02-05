@@ -62,8 +62,8 @@ const printCard = (arr) => {
 
     let domString = '';
     for (let index = 0; index < arr.length; index++) {
-        domString += '<div class="col-sm-12 col-md-6 col-lg-4 my-3">';
-        domString += '<div class="card-body border border-dark rounded text-center mx-2">';
+        domString += `<div class="col-sm-12 col-md-6 col-lg-4 my-3">`;
+        domString += `<div class=" ${arr[index].house}Background card-body border border-dark rounded text-center mx-2">`;
         domString += `<h3 class="card-title">${arr[index].name}</h3>`;
         domString += `<p class="card-text">${arr[index].house}</p>`;
         domString += `<button id="${arr[index].id}" class="btn btn-outline-dark btn-sm mx-5 px-5 py-2 font-weight-bold rounded">Expel!</button>`;
