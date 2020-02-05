@@ -39,10 +39,11 @@
                 <h2 class="mx-4 mt-2">Enter First Year's Name</h2>
             </div>
             <div class="studentNameForm">
-                <form class="d-flex flex-row justify-content-end align-items-center mt-3 mb-1 py-3 overflow-auto">
+                <form class="d-flex flex-row justify-content-end align-items-center mt-3 mb-1 py-3 overflow-auto needs-validation" validate>
                     <label class="my-1 mr-1 mr-sm-2 mr-md-3 mr-lg-4" for="studentName">Student: </label>
                     <input type="text" class="mr-3 mr-md-4 mr-lg-5 border border-dark" id="studentName"
-                        placeholder=" Harry Potter" required="">
+                        placeholder=" Harry Potter">
+                        <div class="invalid-feedback">Pleas enter</div>
                     <button type="submit" id="btnSubmit"
                         class="btn btn-outline-dark btn-sm mx-1 mx-sm-2 mx-md-3 mx-lg-5 px-md-3 px-lg-5 py-0 font-weight-bold rounded">
                         <h5 class="pt-1">Sort!</h5>
