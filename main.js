@@ -39,6 +39,8 @@ const createStudent = () => {
 
     if (objvalue === "") {
 
+        window.alert("You need to enter a name!")
+
     } else {
         arrStudents.push({
             id: studentCounter(),
